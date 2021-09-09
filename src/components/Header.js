@@ -10,10 +10,6 @@ const Container = styled.nav`
   top: 0;
   width: 100%;
   z-index: 999;
-
-  @media screen and (max-width: 700px) {
-    flex-drection: column;
-  }
 `;
 
 const Logo = styled.img`

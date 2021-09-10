@@ -1,21 +1,20 @@
 import React from "react";
 import styled from "styled-components/macro";
-// import Link from "react-router-dom";
 
 const Container = styled.div`
   padding: 0 50px 0 50px;
   margin-top: 100px;
-  display: grid;
-  grid-template-areas: "container";
-  grid-template-rows: 1fr;
 `;
 const ImagesWrapper = styled.div`
+  display: grid;
+  grid-template-areas: "link";
   position: relative;
-  grid-area: "container";
+  overflow: hidden;
 `;
-const ImageLink = styled.a``;
+const Link = styled.a`
+  grid-area: link;
+`;
 const Image = styled.img`
-  position: absolute;
   border-radius: 10px;
   width: 100%;
   height: auto;
@@ -24,13 +23,12 @@ const Image = styled.img`
   &.active {
     clip-path: circle(150% at 0 50%);
   }
+  &:hover {
+    border: 2px solid #fff;
+  }
 `;
 const DotsWrapper = styled.div`
-  grid-area: container;
-  align-self: start;
-  justify-self: center;
-  z-index: 2;
-  position: absolute;
+  margin-top: 3px;
   display: flex;
   justify-content: center;
 `;
@@ -48,7 +46,7 @@ const Dot = styled.span`
   }
 `;
 
-export default function Carousel({ children, ...restProps }) {
+export function Carousel({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
 
@@ -59,8 +57,8 @@ Carousel.ImagesWrapper = function CarouselImagesWrapper({
   return <ImagesWrapper {...restProps}>{children}</ImagesWrapper>;
 };
 
-Carousel.ImageLink = function CarouselImageLink({ children, ...restProps }) {
-  return <ImageLink {...restProps}>{children}</ImageLink>;
+Carousel.Link = function CarouselLink({ children, ...restProps }) {
+  return <Link {...restProps}>{children}</Link>;
 };
 
 Carousel.Image = function CarouselImage({ children, ...restProps }) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Carousel from "../components/Carousel";
+import { Carousel } from "../components/Carousel";
 import dataSlider from "../dataSlider";
 
 export default function CarouselContainer() {
@@ -29,12 +29,12 @@ export default function CarouselContainer() {
     <Carousel>
       <Carousel.ImagesWrapper>
         {dataSlider.map((item, index) => (
-          <Carousel.ImageLink key={index}>
+          <Carousel.Link key={index}>
             <Carousel.Image
               className={index === active ? "active" : ""}
               src={`../images/${item.path}`}
             ></Carousel.Image>
-          </Carousel.ImageLink>
+          </Carousel.Link>
         ))}
       </Carousel.ImagesWrapper>
 

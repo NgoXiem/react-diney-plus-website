@@ -39,7 +39,7 @@ const Span = styled.span`
   align-self: center;
 `;
 
-export default function Header({ children, ...restProps }) {
+export function Header({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
 

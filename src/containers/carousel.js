@@ -21,9 +21,8 @@ export default function CarouselContainer() {
       setActive(num);
     }, 3000);
     setAuto(timer);
+    return () => clearInterval(timer);
   }, []);
-
-  //console.log(active);
 
   return (
     <Carousel>

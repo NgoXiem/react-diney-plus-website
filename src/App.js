@@ -1,14 +1,9 @@
-import "./App.css";
-import CarouselContainer from "./containers/carousel";
-import HeaderContainer from "./containers/header";
-import ViewerContainer from "./containers/viewer";
+import Browse from "./containers/browse";
 
 function App() {
   return (
     <div className="App">
-      <HeaderContainer></HeaderContainer>
-      <CarouselContainer></CarouselContainer>
-      <ViewerContainer></ViewerContainer>
+      <Browse></Browse>
     </div>
   );
 }

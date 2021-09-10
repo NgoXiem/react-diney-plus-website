@@ -37,6 +37,29 @@ const Icon = styled.img`
 const Span = styled.span`
   text-transform: uppercase;
   align-self: center;
+  font-size: 0.9em;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  padding-top: 4px;
+  position: relative;
+  @media screen and (min-width: 767px) {
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #fff;
+      transform: scaleX(0);
+      transform-origin: top left;
+      transition: transform 0.3s ease;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+    }
+  }
 `;
 
 export function Header({ children, ...restProps }) {

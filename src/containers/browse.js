@@ -20,7 +20,7 @@ export default function Browse() {
     const getmovies = async (db) => {
       const moviesCol = collection(db, "movies");
       const movieSnapshot = await getDocs(moviesCol);
-      const moviesList = movieSnapshot.docs.map((doc) => {
+      movieSnapshot.docs.map((doc) => {
         switch (doc.data().type) {
           case "recommend":
             recommend = [...recommend, { id: doc.id, ...doc.data() }];

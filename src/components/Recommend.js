@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Container = styled.div`
   margin: 20px 0 50px 0;
@@ -13,17 +12,16 @@ const List = styled.div`
   margin: 20px 0 50px 0;
 `;
 
-const MovieLink = styled.a`
-  img {
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    border: 3px solid #2b3041;
-    border-radius: 10px;
-    margin: 0 auto;
-    box-shadow: 0 10px 5px -4px #080a12;
-  }
-  img:hover {
+const Image = styled.img`
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+  border: 3px solid #2b3041;
+  border-radius: 10px;
+  margin: 0 auto;
+  box-shadow: 0 10px 5px -4px #080a12;
+
+  &:hover {
     border: 3px solid #fff;
     transform: scale(1.08);
     transition: all 0.3s ease-in-out;
@@ -38,6 +36,6 @@ Recommend.List = function RecommendList({ children, ...restProps }) {
   return <List {...restProps}>{children}</List>;
 };
 
-Recommend.MovieLink = function RecommendMovieLink({ children, ...restProps }) {
-  return <MovieLink {...restProps}>{children}</MovieLink>;
+Recommend.Image = function RecommendImage({ children, ...restProps }) {
+  return <Image {...restProps}>{children}</Image>;
 };

@@ -4,6 +4,7 @@ import styled from "styled-components/macro";
 const Container = styled.div`
   padding: 0 50px 0 50px;
   margin-top: 100px;
+  position: relative;
 `;
 const ImagesWrapper = styled.div`
   display: grid;
@@ -23,15 +24,13 @@ const Image = styled.img`
   &.active {
     clip-path: circle(150% at 0 50%);
   }
-  &:hover {
-    border: 2px solid #fff;
-  }
 `;
 const DotsWrapper = styled.div`
   margin-top: 3px;
   display: flex;
   justify-content: center;
 `;
+
 const Dot = styled.span`
   height: 10px;
   width: 10px;
@@ -44,6 +43,14 @@ const Dot = styled.span`
   &.active {
     background-color: #dae1cc;
   }
+`;
+
+const ButtonsWrapper = styled.div`
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 40%;
 `;
 
 export function Carousel({ children, ...restProps }) {
@@ -70,6 +77,13 @@ Carousel.DotsWrapper = function CarouselDotsWrapper({
   ...restProps
 }) {
   return <DotsWrapper {...restProps}>{children}</DotsWrapper>;
+};
+
+Carousel.ButtonsWrapper = function CarouselButtonsWrapper({
+  children,
+  ...restProps
+}) {
+  return <ButtonsWrapper {...restProps}>{children}</ButtonsWrapper>;
 };
 
 Carousel.Dot = function CarouselDot({ children, ...restProps }) {

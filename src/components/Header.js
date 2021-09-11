@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 
 const Container = styled.nav`
   display: flex;
@@ -12,9 +13,14 @@ const Container = styled.nav`
   z-index: 999;
 `;
 
+const HomeLink = styled(Link)`
+  width: 70px;
+  height: 50px;
+`;
+
 const Logo = styled.img`
-  max-width: 70px;
-  max-height: 50px;
+  width: 70px;
+  height: 50px;
 `;
 
 const Row = styled.div`
@@ -24,7 +30,7 @@ const Row = styled.div`
   }
 `;
 
-const Link = styled.a`
+const NavLink = styled(Link)`
   display: flex;
   flex-direction: row;
 `;
@@ -65,7 +71,9 @@ const Span = styled.span`
 export function Header({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>;
 }
-
+Header.HomeLink = function HeaderHomeLink({ ...restProps }) {
+  return <HomeLink {...restProps}></HomeLink>;
+};
 Header.Logo = function HeaderLogo({ ...restProps }) {
   return <Logo {...restProps}></Logo>;
 };
@@ -74,8 +82,8 @@ Header.Row = function ({ children, ...restProps }) {
   return <Row {...restProps}>{children}</Row>;
 };
 
-Header.Link = function HeaderLink({ children, ...restProps }) {
-  return <Link {...restProps}>{children}</Link>;
+Header.NavLink = function HeaderNavLink({ children, ...restProps }) {
+  return <NavLink {...restProps}>{children}</NavLink>;
 };
 
 Header.Icon = function HeaderIcon({ ...restProps }) {

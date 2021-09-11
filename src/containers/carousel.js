@@ -50,6 +50,10 @@ export default function CarouselContainer() {
           ></Carousel.Dot>
         ))}
       </Carousel.DotsWrapper>
+      <Carousel.ButtonsWrapper>
+        <i className="fas fa-chevron-circle-left fa-lg"></i>
+        <i className="fas fa-chevron-circle-right fa-lg"></i>
+      </Carousel.ButtonsWrapper>
     </Carousel>
   );
 }

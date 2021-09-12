@@ -59,7 +59,7 @@ const ButtonLeft = styled.button`
   cursor: pointer;
   position: absolute;
   top: 40%;
-  left: 0%;
+  left: 10px;
 `;
 const ButtonRight = styled.button`
   background: white;
@@ -69,7 +69,7 @@ const ButtonRight = styled.button`
   cursor: pointer;
   position: absolute;
   top: 40%;
-  right: 0%;
+  right: 10px;
 `;
 
 export function Carousel({ children, ...restProps }) {

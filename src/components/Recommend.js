@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const Container = styled.div`
   margin-top: 50px;
@@ -9,6 +9,7 @@ const List = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 30px;
+  margin-top: 20px;
 `;
 
 const Image = styled.img`

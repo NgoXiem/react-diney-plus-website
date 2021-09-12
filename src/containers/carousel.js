@@ -3,8 +3,7 @@ import { Carousel } from "../components/Carousel";
 import dataSlider from "../dataSlider";
 
 export default function CarouselContainer() {
-  const [active, setActive] = useState(0);
-  const [number, setNumber] = useState();
+  let [active, setActive] = useState(0);
   const [auto, setAuto] = useState();
 
   let num = 0;
@@ -21,21 +20,18 @@ export default function CarouselContainer() {
 
   useEffect(() => {
     timer = setInterval(() => {
-      if (number) {
-        num = number + 1;
+      active++;
+      if (active > dataSlider.length - 1) {
+        setActive(0);
       }
-      if (number > dataSlider.length - 1 || !number) {
-        num++;
+      if (active < 0) {
+        setActive(dataSlider.length - 1);
       }
-      if (num > dataSlider.length - 1) {
-        num = 0;
-      }
-      setActive(num);
-      setNumber(num);
+      setActive(active);
     }, 3000);
     setAuto(timer);
     return () => clearInterval(timer);
-  }, [number]);
+  }, [active]);
 
   return (
     <Carousel>
@@ -57,7 +53,6 @@ export default function CarouselContainer() {
             onClick={() => {
               clearInterval(auto);
               setActive(index);
-              setNumber(index);
             }}
             className={index === active ? "active" : ""}
           ></Carousel.Dot>

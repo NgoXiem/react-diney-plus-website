@@ -6,7 +6,6 @@ import RecommnendContainer from "./recommend";
 import NewMoviesContainer from "./newMovies";
 import OriginalsContainer from "./originals";
 import TrendingContainer from "./trending";
-import HeaderContainer from "./header";
 import CarouselContainer from "./carousel";
 import ViewerContainer from "./viewer";
 
@@ -56,7 +55,6 @@ export default function Browse() {
 
   return (
     <Wrapper>
-      <HeaderContainer></HeaderContainer>
       <CarouselContainer></CarouselContainer>
       <ViewerContainer></ViewerContainer>
       <RecommnendContainer movies={movies}></RecommnendContainer>

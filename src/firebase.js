@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore/lite";
+import { GoogleAuthProvider } from "firebase/auth";
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA_ou-ffG9bJuz0xk_mh82UjlQpj44ZhuE",
@@ -12,6 +14,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const provider = new GoogleAuthProvider();
 
 // Get a list of movies from your database
 export default db;

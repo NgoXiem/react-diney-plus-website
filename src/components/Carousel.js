@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 
 const Container = styled.div`
   padding: 0 50px 0 50px;
-  margin-top: 100px;
+  margin-top: 80px;
   position: relative;
 `;
 const ImagesWrapper = styled.div`

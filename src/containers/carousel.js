@@ -4,25 +4,38 @@ import dataSlider from "../dataSlider";
 
 export default function CarouselContainer() {
   const [active, setActive] = useState(0);
+  const [number, setNumber] = useState();
   const [auto, setAuto] = useState();
-  //   let [num, setNum] = useState(0);
+
   let num = 0;
   let timer;
-  const handleClick = (index) => {
-    setActive(index);
-  };
+
+  useEffect(() => {
+    if (active > dataSlider.length - 1) {
+      setActive(0);
+    }
+    if (active < 0) {
+      setActive(dataSlider.length - 1);
+    }
+  }, [active]);
 
   useEffect(() => {
     timer = setInterval(() => {
-      num++;
+      if (number) {
+        num = number + 1;
+      }
+      if (number > dataSlider.length - 1 || !number) {
+        num++;
+      }
       if (num > dataSlider.length - 1) {
         num = 0;
       }
       setActive(num);
+      setNumber(num);
     }, 3000);
     setAuto(timer);
     return () => clearInterval(timer);
-  }, []);
+  }, [number]);
 
   return (
     <Carousel>
@@ -43,17 +56,28 @@ export default function CarouselContainer() {
             key={index}
             onClick={() => {
               clearInterval(auto);
-              handleClick(index);
-              num = index;
+              setActive(index);
+              setNumber(index);
             }}
             className={index === active ? "active" : ""}
           ></Carousel.Dot>
         ))}
       </Carousel.DotsWrapper>
-      <Carousel.ButtonsWrapper>
-        <i className="fas fa-chevron-circle-left fa-lg"></i>
-        <i className="fas fa-chevron-circle-right fa-lg"></i>
-      </Carousel.ButtonsWrapper>
+
+      <Carousel.ButtonLeft
+        onClick={() => {
+          setActive(active - 1);
+        }}
+      >
+        <i className="fas fa-chevron-left fa-lg"></i>
+      </Carousel.ButtonLeft>
+      <Carousel.ButtonRight
+        onClick={() => {
+          setActive(active + 1);
+        }}
+      >
+        <i className="fas fa-chevron-right fa-lg"></i>
+      </Carousel.ButtonRight>
     </Carousel>
   );
 }

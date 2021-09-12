@@ -9,7 +9,6 @@ const Container = styled.div`
 const ImagesWrapper = styled.div`
   display: grid;
   grid-template-areas: "link";
-  position: relative;
   overflow: hidden;
 `;
 const Link = styled.a`
@@ -48,9 +47,29 @@ const Dot = styled.span`
 const ButtonsWrapper = styled.div`
   color: white;
   display: flex;
+  gap: 10px;
   justify-content: space-between;
+`;
+
+const ButtonLeft = styled.button`
+  background: white;
+  border: none;
+  padding: 8px 7px 5px 7px;
+  border-radius: 50%;
+  cursor: pointer;
   position: absolute;
   top: 40%;
+  left: 0%;
+`;
+const ButtonRight = styled.button`
+  background: white;
+  border: none;
+  padding: 8px 7px 5px 7px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  right: 0%;
 `;
 
 export function Carousel({ children, ...restProps }) {
@@ -88,4 +107,15 @@ Carousel.ButtonsWrapper = function CarouselButtonsWrapper({
 
 Carousel.Dot = function CarouselDot({ children, ...restProps }) {
   return <Dot {...restProps}>{children}</Dot>;
+};
+
+Carousel.ButtonLeft = function CarouselButtonLeft({ children, ...restProps }) {
+  return <ButtonLeft {...restProps}>{children}</ButtonLeft>;
+};
+
+Carousel.ButtonRight = function CarouselButtonRight({
+  children,
+  ...restProps
+}) {
+  return <ButtonRight {...restProps}>{children}</ButtonRight>;
 };

@@ -29,6 +29,7 @@ const Wrap = styled.div`
     letter-spacing: 1.2px;
     text-transform: uppercase;
     max-width: 800px;
+    cursor: pointer;
   }
   p {
     text-align: center;

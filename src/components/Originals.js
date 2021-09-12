@@ -2,14 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin: 20px 0 50px 0;
+  margin-top: 50px;
   padding: 0 50px;
 `;
 const List = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 30px;
-  margin: 20px 0 50px 0;
 `;
 
 const Image = styled.img`

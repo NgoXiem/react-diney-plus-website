@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components/macro";
 import db from "../firebase";
 import { collection, getDocs } from "firebase/firestore/lite";
 import RecommnendContainer from "./recommend";
@@ -46,8 +47,15 @@ export default function Browse() {
     getmovies(db);
   }, [db]);
 
+  const Wrapper = styled.section`
+    background-image: url("../images/home-background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  `;
+
   return (
-    <>
+    <Wrapper>
       <HeaderContainer></HeaderContainer>
       <CarouselContainer></CarouselContainer>
       <ViewerContainer></ViewerContainer>
@@ -55,6 +63,6 @@ export default function Browse() {
       <NewMoviesContainer movies={movies}></NewMoviesContainer>
       <OriginalsContainer movies={movies}></OriginalsContainer>
       <TrendingContainer movies={movies}></TrendingContainer>
-    </>
+    </Wrapper>
   );
 }

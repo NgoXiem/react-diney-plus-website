@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import HeaderContainer from "../containers/header";
 import db from "../firebase";
 import { collection, getDocs } from "firebase/firestore/lite";
 import { DetailsContainer } from "../containers/details";
@@ -34,7 +33,6 @@ export default function MovieDetails() {
 
   return (
     <Wrapper>
-      <HeaderContainer></HeaderContainer>
       {details && <DetailsContainer details={details}></DetailsContainer>}
     </Wrapper>
   );

@@ -51,6 +51,7 @@ export default function HeaderContainer() {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       setUserImg(user.photoURL);
+      history.push("/browse");
     } else {
       history.push("/");
     }

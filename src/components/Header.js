@@ -18,6 +18,7 @@ const Container = styled.div`
 const Logo = styled.img`
   width: 70px;
   height: 50px;
+  cursor: pointer;
 `;
 const Nav = styled.nav`
   display: flex;

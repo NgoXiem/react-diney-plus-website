@@ -23,7 +23,6 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: row;
   gap: 30px;
-  // justify-content: space-between;
 `;
 
 const Login = styled.button`
@@ -40,6 +39,9 @@ const Login = styled.button`
 const Row = styled.div`
   display: flex;
   gap: 30px;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const NavLink = styled(Link)`

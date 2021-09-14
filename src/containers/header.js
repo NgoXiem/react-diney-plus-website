@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "../components/Header";
+import { Link } from "react-router-dom";
 import {
   getAuth,
   signInWithPopup,
@@ -57,7 +58,9 @@ export default function HeaderContainer() {
 
   return (
     <Header>
-      <Header.Logo src="../images/logo.svg" alt="logo"></Header.Logo>
+      <Link to={user ? "/browse" : "/"}>
+        <Header.Logo src="../images/logo.svg" alt="logo"></Header.Logo>
+      </Link>
       {!user ? (
         <Header.Login onClick={() => handleSignIn()}>Login</Header.Login>
       ) : (
